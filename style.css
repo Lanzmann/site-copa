@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --card-color-primary: #f7dd43;
+
+}
 ul {
     list-style: none;
 }
@@ -112,4 +116,13 @@ header {
     100% {
         opacity: 1;
     }
+}
+
+@media (min-width: 900px) {
+    #cards {
+        max-width: 670px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
 }
