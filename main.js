@@ -21,13 +21,7 @@ function criaCartão(data, dia, jogos) {
     `
 }
 
-document.querySelector('#app').innerHTML = `
-    <header>
-        <img src="/assets/logo.svg" alt="">
-    </header>
-    <main id="cards">
-        ${criaCartão('24/11', 'quinta', criaJogo('brazil', 'serbia', '13:00'))}
-        ${criaCartão('28/11', 'segunda', criaJogo('brazil', 'germany', '13:00'))}
-        ${criaCartão('30/11', 'sábado', criaJogo('brazil', 'argentina', '14:00'))}
-    </main>
-`
+document.querySelector('#cards').innerHTML = 
+    criaCartão('24/11', 'quinta', criaJogo('brazil', 'serbia', '13:00')) +
+    criaCartão('28/11', 'segunda', criaJogo('brazil', 'switzerland', '13:00') + criaJogo('portugal', 'uruguay', '16:30')) +
+    criaCartão('02/12', 'sexta', criaJogo('brazil', 'cameroon', '16:00'))
