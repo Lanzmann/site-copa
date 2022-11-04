@@ -1,28 +1,33 @@
-function createCard() {
+function criaJogo(jogador1, jogador2, hora){
+    return `
+    <li>
+        <img src="/assets/icons/icon=${jogador1}.svg" alt="">
+        <strong>${hora}</strong>
+        <img src="/assets/icons/icon=${jogador2}.svg" alt="">
+    </li>
+        `
+}
+
+
+
+function criaCartão(data, dia, jogos) {
     return `
     <div class="card">
-    <h2>24/11<span>quinta</span></h2>
-
-    <ul><li>
-        <img src="/assets/icons/icon=brazil.svg" alt="">
-        <strong>07:00</strong>
-        <img src="/assets/icons/icon=afghanistan.svg" alt="">
-    </li>
-    <li>
-        <img src="/assets/icons/icon=serbia.svg" alt="">
-        <strong>17:00</strong>
-        <img src="/assets/icons/icon=bulgaria.svg" alt="">
-    </li></ul>
-</div>
+        <h2>${data}<span>${dia}</span></h2>
+            <ul>
+            ${jogos}
+            </ul>
+    </div>
     `
 }
 
 document.querySelector('#app').innerHTML = `
-<header>
-            <img src="/assets/logo.svg" alt="">
-        </header>
-        <main id="cards">
-            ${createCard()}
-            ${createCard()}
-        </main>
+    <header>
+        <img src="/assets/logo.svg" alt="">
+    </header>
+    <main id="cards">
+        ${criaCartão('24/11', 'quinta', criaJogo('brazil', 'serbia', '13:00'))}
+        ${criaCartão('28/11', 'segunda', criaJogo('brazil', 'germany', '13:00'))}
+        ${criaCartão('30/11', 'sábado', criaJogo('brazil', 'argentina', '14:00'))}
+    </main>
 `
